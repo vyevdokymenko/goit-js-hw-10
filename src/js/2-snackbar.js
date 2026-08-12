@@ -27,7 +27,17 @@ form.addEventListener('submit', (e) => {
     delay: delay,
     shouldResolve: state === 'fulfilled',
   })
-    .then((value) => iziToast.show(getSuccessSettings(value)))
-    .catch((error) => iziToast.show(getErrorSettings(error)));
+    .then(delay =>
+      iziToast.show({
+        ...getSuccessSettings(delay),
+        message: `Fulfilled promise in ${delay}ms`,
+      })
+    )
+    .catch(delay =>
+      iziToast.show({
+        ...getErrorSettings(delay),
+        message: `Rejected promise in ${delay}ms`,
+      })
+    );
   form.reset();
 });
