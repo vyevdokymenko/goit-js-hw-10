@@ -1,0 +1,90 @@
+.form {
+  width: 360px;
+  margin: 20px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.delay-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+#delay {
+  width: 100%;
+  height: 40px;
+  font: inherit;
+  padding: 8px 16px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  outline: none;
+}
+
+#delay:hover {
+  border: 1px solid #000;
+}
+
+#delay:active {
+  border: 1px solid #4e75ff;
+}
+
+.form-group {
+  text-align: left;
+  padding-inline-start: 0;
+  margin: 0;
+  border-radius: 4px;
+  stroke-width: 1px;
+  stroke: #808080;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+}
+
+.form-group legend {
+  margin-inline-start: 28px;
+}
+
+.form-group legend:hover, .form-group legend:active {
+  stroke: #000;
+}
+
+.radio-label {
+  display: flex;
+  gap: 14px;
+}
+
+.form-radio {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.form-submit {
+  color: #ffffff;
+  font: inherit;
+  font-weight: 500;
+  width: 100%;
+  background: #4e75ff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.form-submit:hover {
+  background: #6c8cff;
+}
+
+.snackbar-toast {
+  border-radius: 4px;
+}
+
+.snackbar-toast .iziToast-close {
+  background-size: 16px 16px;
+  filter: brightness(0) invert(1);
+}
