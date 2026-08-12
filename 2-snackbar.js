@@ -1,10 +1,10 @@
-import{s as a}from"./assets/sprite-Dq4561ti.js";/* empty css                      */import{i as n}from"./assets/vendor-BbbuE1sJ.js";const c={titleColor:"#FFFFFF",messageColor:"#FFFFFF",position:"topRight",transitionIn:"fadeIn",animateInside:!1,color:"#fff",icon:"toast-icon",class:"snackbar-toast"},l=s=>{const t={title:"OK",message:`Fulfilled promise in ${s}ms`,backgroundColor:"#59a10d",progressBarColor:"#326101",onOpening(o,e){const i=e.querySelector(".iziToast-icon");i.innerHTML=`
-       <svg width="24" height="24" aria-hidden="true">
-        <use href="${a}#x-success"></use>
-       </svg>
-    `}};return{...c,...t}},m=s=>{const t={title:"Error",message:`Rejected promise in ${s}ms`,backgroundColor:"#ef4040",progressBarColor:"#b51b1b",onOpening(o,e){const i=e.querySelector(".iziToast-icon");i.innerHTML=`
-       <svg width="24" height="24" aria-hidden="true">
-        <use href="${a}#x-octagon"></use>
-       </svg>
-    `}};return{...c,...t}},r=document.querySelector(".form"),u=({value:s,delay:t,shouldResolve:o=!0})=>new Promise((e,i)=>{setTimeout(()=>{o?e(s):i(s)},t)});r.addEventListener("submit",s=>{s.preventDefault();const t=Math.max(Number(r.elements.delay.value),0),o=r.elements.state.value;u({value:t,delay:t,shouldResolve:o==="fulfilled"}).then(e=>n.show({...l(e),message:`Fulfilled promise in ${e}ms`})).catch(e=>n.show({...m(e),message:`Rejected promise in ${e}ms`})),r.reset()});
+import{s as l}from"./assets/sprite-Dq4561ti.js";/* empty css                      */import{i as c}from"./assets/vendor-BbbuE1sJ.js";const t=document.querySelector(".form"),m=({value:o,delay:s,shouldResolve:i=!0})=>new Promise((e,n)=>{setTimeout(()=>{i?e(o):n(o)},s)});t.addEventListener("submit",o=>{o.preventDefault();const s=Math.max(Number(t.elements.delay.value),0),i=t.elements.state.value;m({value:s,delay:s,shouldResolve:i==="fulfilled"}).then(e=>{c.show({title:"OK",titleColor:"#FFFFFF",message:`Fulfilled promise in ${e}ms`,messageColor:"#FFFFFF",position:"topRight",transitionIn:"fadeIn",animateInside:!1,backgroundColor:"#59a10d",color:"#fff",icon:"toast-icon",class:"snackbar-toast",progressBarColor:"#326101",onOpening(n,r){const a=r.querySelector(".iziToast-icon");a.innerHTML=`
+            <svg width="24" height="24" aria-hidden="true">
+              <use href="${l}#x-success"></use>
+            </svg>
+          `}})}).catch(e=>{c.show({title:"Error",titleColor:"#FFFFFF",message:`Rejected promise in ${e}ms`,messageColor:"#FFFFFF",position:"topRight",transitionIn:"fadeIn",animateInside:!1,backgroundColor:"#ef4040",color:"#fff",icon:"toast-icon",class:"snackbar-toast",progressBarColor:"#b51b1b",onOpening(n,r){const a=r.querySelector(".iziToast-icon");a.innerHTML=`
+            <svg width="24" height="24" aria-hidden="true">
+              <use href="${l}#x-octagon"></use>
+            </svg>
+          `}})}),t.reset()});
 //# sourceMappingURL=2-snackbar.js.map
